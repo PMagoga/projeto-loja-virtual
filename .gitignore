@@ -10,7 +10,7 @@ admin.py
 tests.py
 asgi.py
 wsgi.py
-settings
+settings.py
 
 
 # Backup files # 
