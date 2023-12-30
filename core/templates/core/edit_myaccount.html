@@ -1,0 +1,35 @@
+{% extends "core/base.html" %}
+
+{% block title %}Minha Conta{% endblock title %}
+
+{% block content %}  
+
+<div class="max-w-6xl mx-auto p-6">
+    <h1 class="mb-5 text-3xl">Editar Minha Conta</h1>
+
+    <form method="post" action="." class="space-y-3">
+        {% csrf_token %}
+        <div>
+            <label>Primeiro Nome</label>
+            <input type="text" name="first_name" value="{{ request.user.first_name }}" class="w-full mt-2 py-4 px-6 bg-gray-100 rounded-xl">
+        </div>
+        <div>
+            <label>Sobrenome</label>
+            <input type="text" name="last_name" value="{{ request.user.last_name }}" class="w-full mt-2 py-4 px-6 bg-gray-100 rounded-xl">
+        </div>
+        <div>
+            <label>Usuário</label>
+            <input type="text" name="username" value="{{ request.user.username }}" class="w-full mt-2 py-4 px-6 bg-gray-100 rounded-xl">
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="email" name="email" value="{{ request.user.email }}" class="w-full mt-2 py-4 px-6 bg-gray-100 rounded-xl">
+        </div>
+
+        <div>
+            <button class="py-4 px-6 rounded-xl text-white bg-purple-500">Enviar</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
